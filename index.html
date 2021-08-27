@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weekly Account Balance</title> 
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/main.css') }}">
+</head>
+
+<body>
+    <section class="wrapper">
+        <div id="stars1"></div>
+        <div id="stars2"></div>
+        <div id="stars3"></div>
+        
+        <section class="hero">
+            <div class="container">
+                <h2 class="subhead">Fill out the boxes</h2>
+                    <h3 class="subhead-2">& get your 1 year financial report </h3>
+                        <form action="#" method="POST">
+                            <div class="list-info">
+                                    <p><label for="ab">Current Account Balance :</label> <input type="number" id="ab" name="ab"/></p>
+                                    <p><label for="mi">Monthly Income :</label> <input type="number" id="mi" name="mi"/></p>
+                                    <p><label for="me">Monthly Expenses :</label> <input type="number" id="me" name="me"/></p>
+                                    <p><label for="we">Weekly Expenses :</label> <input type="number" id="we" name="we"/></p>
+                            </div> 
+
+
+                        
+                            <div class="hero-submit">
+                                <input type="submit" name="submit" value="Generate report" />
+                            </div>  
+                        </form>
+                            
+                    <div class="hero-footer">*this information is not saved</div>   
+            </div>
+        </section>
+    </section>
+    
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-center">  
+                <h2>Contact</h2>
+
+                <form action="mailto:lukassedgars@gmail.com" method="post" enctype="text/plain">
+                        <label for="name"></label>
+                        <input type="text" id="name" name="name" placeholder="Your name" required>
+
+                        <label for="email"></label>
+                        <input type="email" id="email" name="email" placeholder="e-mail" required>
+                        
+                        <label for="message"></label>
+                        <textarea name="message" id="message" cols="30" rows="10" placeholder="MESSAGE"></textarea>
+                
+                        <input type="submit" class="send-message-cta" value="Send message">
+                </form>
+            </div>
+        </div>
+
+    </section>
+
+    <div id="footer">
+        Created by Lukass Lappuke
+    </div>
+</body> 
+
+</html>
