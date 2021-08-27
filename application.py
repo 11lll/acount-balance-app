@@ -4,8 +4,6 @@ from datetime import date
 from flask import Flask, redirect, url_for, render_template, request
 
 application = Flask(__name__)
-application.config["SECRET_KEY"] = "admin"
-
 
 """The Account Balance Function"""
 
