@@ -157,5 +157,5 @@ def dataframe():
 
 
 if __name__ == "__main__":
-        # application.run(debug=True)
-        application.run()
+        application.run(debug=True)
+        # application.run()
