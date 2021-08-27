@@ -140,7 +140,7 @@ def home():
         #print(acc_balance, weekly_expenses, monthly_income, monthly_expenses)
         return redirect(url_for("dataframe", acc_balance=ab, weekly_expenses=we, monthly_income=mi, monthly_expenses=me))
 
-    return render_template("index2.html")
+    return render_template("index.html")
 
 
 
