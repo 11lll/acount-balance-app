@@ -191,7 +191,6 @@ h3 {
 
 .thanks-box {
   height: 100vh;
-  background: rgba(0, 0, 0, 0.5);
   text-align: center;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -202,9 +201,12 @@ h3 {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  overflow: auto;
 }
 
 .thanks-message {
+  width: 25em;
+  height: 1.6em;
   text-align: center;
   padding: 2em;
   color: wheat;
@@ -215,6 +217,24 @@ h3 {
 .thanks-message:hover {
   background-color: var(--main-hover-color);
   color: var(--main-font-color);
+}
+
+.thanks-message:hover span {
+  display: none;
+}
+
+.thanks-message:hover:before {
+  content: "Go back!";
+  font-size: 25px;
+}
+
+.thanks-message a {
+  text-decoration: none;
+  color: wheat;
+}
+
+.thanks-message span {
+  font-size: 25px;
 }
 
 #stars1 {

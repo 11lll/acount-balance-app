@@ -215,14 +215,16 @@ h3 {
 
 .thanks-box {
     height: 100vh;
-    background:rgba(0,0,0,0.5);
     text-align:center;
     display:flex;
     align-items: center;
     justify-content: center;
+    overflow: auto;
 }
 
 .thanks-message{
+    width: 25em;
+    height: 1.6em;
     text-align: center;
     padding: 2em;
     color: wheat;
@@ -233,7 +235,21 @@ h3 {
         background-color: var(--main-hover-color);
         color: var(--main-font-color);
     }
-      
+    &:hover span {display:none} // change content on hover : https://stackoverflow.com/questions/9913293/change-text-on-hover-then-return-to-the-previous-text/9913526
+    &:hover:before {
+        content:"Go back!";
+        font-size: 25px;
+        }
+
+    a {
+        text-decoration: none;
+        color: wheat;
+        
+    }
+
+    span {
+        font-size: 25px;
+    } 
 
 }
 

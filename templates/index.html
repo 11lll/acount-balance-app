@@ -28,18 +28,12 @@
         <div class="container">
             <div class="contact-center">  
                 <h2>Contact</h2>
-
-                <form action="/form" method="POST" enctype="text/plain">
-                        <!-- <label for="name"></label> -->
-                        <input type="text" id="name" name="name" placeholder="Your name" required>
-
-                        <!-- <label for="email"></label> -->
-                        <input type="email" id="email" name="email" placeholder="e-mail" required>
-                        
-                        <!-- <label for="message"></label> -->
-                        <textarea name="message" id="message" cols="30" rows="10" placeholder="MESSAGE"></textarea>
-                
-                        <input name="submit-message" type="submit" class="send-message-cta" value="Send message">
+                <form action="{{ url_for('form') }}" method="POST" enctype="text/plain">
+                    {{ form.csrf_token }}
+                    {{ form.name }}
+                    {{ form.email }}
+                    {{ form.message }}
+                    {{ form.submit }}"
                 </form>
             </div>
         </div>
