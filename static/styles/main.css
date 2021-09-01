@@ -9,13 +9,13 @@ html {
   font-family: 'Inconsolata';
   background: radial-gradient(ellipse at bottom, #1b2836 0%, #132017 100%);
   overflow: auto;
-  margin: 0;
+  height: 100vh;
 }
 
 body {
   margin: 0;
   padding: 0;
-  height: 100%;
+  min-height: 100vh;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   overflow: hidden;
@@ -61,7 +61,7 @@ body {
   padding: 2em;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 10em;
+  margin-top: 14vh;
   outline: 1px solid #3f4832;
   -webkit-box-shadow: 0em 1em 1.5em white;
           box-shadow: 0em 1em 1.5em white;
@@ -187,6 +187,34 @@ h3 {
 
 .contact-section input[type="submit"]:hover {
   background-color: var(--main-hover-color);
+}
+
+.thanks-box {
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.thanks-message {
+  text-align: center;
+  padding: 2em;
+  color: wheat;
+  outline: 1.5px solid #ffffff;
+  display: inline-block;
+}
+
+.thanks-message:hover {
+  background-color: var(--main-hover-color);
+  color: var(--main-font-color);
 }
 
 #stars1 {

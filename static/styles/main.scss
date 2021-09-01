@@ -15,19 +15,23 @@ html {
     background: radial-gradient(ellipse at bottom, hsl(212, 33%, 16%) 0%,hsl(140, 24%, 10%) 100%);
     // background-size: 100% 100%;
     overflow: auto;
-    margin: 0;
-    // height: 100%;
+    // margin: 0;
+    height: 100vh;
 }
 
 
 body {
     margin: 0;
     padding: 0;
-    height: 100%;
+    min-height: 100vh;
     box-sizing: border-box;
     overflow: hidden;
+    
 }
 
+// .wrapper {
+//     height: 100%;
+// }
 
 #footer {
     color: white;
@@ -60,12 +64,12 @@ body {
     padding: 2em;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 10em;
+    margin-top: 14vh;
     outline: 1px solid hsl(85, 18%, 24%);
+    box-shadow: 0em 1em 1.5em hsl(0, 0%, 100%);
     //text-align: left;
     // border-radius: .2em;
-    box-shadow: 0em 1em 1.5em hsl(0, 0%, 100%);
-
+    
     .subhead {
         text-transform: uppercase;
     }
@@ -97,9 +101,9 @@ body {
             margin-top: .5em;
             // outline: 3px solid hsl(55, 100%, 50%);
 
-    }
+        }
 
-}
+    }   
 
 
     .hero-submit {
@@ -138,18 +142,7 @@ body {
     outline: 4px solid var(--main-hero-color);
 }
 
-// https://code.tutsplus.com/tutorials/getting-clever-with-css3-shadows--net-15991
-// .hero:after {
-//     content:'';
-//     color: transparent;
-//     box-shadow: 0em 3em 4em hsl(0, 2%, 64%);
-//     position: absolute;
-//     width: 350px;
-//     height: 20px;
-//     //bottom: 30em;
-//     z-index: -1;
 
-// }
 
 p {
     color: var(--main-font-color);
@@ -219,6 +212,33 @@ h3 {
     background-color: var(--main-hover-color);
     }
 }
+
+.thanks-box {
+    height: 100vh;
+    background:rgba(0,0,0,0.5);
+    text-align:center;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.thanks-message{
+    text-align: center;
+    padding: 2em;
+    color: wheat;
+    outline: 1.5px solid #ffffff;
+    display: inline-block;
+    // justify-content: center;
+    &:hover {
+        background-color: var(--main-hover-color);
+        color: var(--main-font-color);
+    }
+      
+
+}
+
+
+
 
 
 
