@@ -64,7 +64,7 @@ body {
     padding: 2em;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 14vh;
+    margin-top: 15vh;
     outline: 1px solid hsl(85, 18%, 24%);
     box-shadow: 0em 1em 1.5em hsl(0, 0%, 100%);
     //text-align: left;
@@ -160,28 +160,35 @@ h3 {
 
 .contact-section {
     padding: 2em;
-    margin-top: 8em;
+    margin-top: 6em;
     display: flex;
     margin-left: auto;
     margin-right: auto;
     box-sizing: border-box;
-    
-    // label[for="name"] {
-    //     display: block;
-    //     width: 100%;
-    // }
+
     .container{
         max-width: 300px;
         // background-color: black;
         margin: 0 auto;
         width: 100%;
+
     }
     
+    h1 {
+        text-align: center;
+        color: white;
+        text-shadow: .4px .3px  #ffffff;
+        &:hover {
+            color:hsl(137, 45%, 88%);
+        }
+    }
+
     h2 {
         text-align: center;
         color: white;
         text-shadow: .4px .3px  #ffffff;
     }
+
     label {
         display: block;
         width: 100%;
@@ -210,6 +217,25 @@ h3 {
     }
     input[type="submit"]:hover{
     background-color: var(--main-hover-color);
+    }
+
+    .go-home-btn {
+        margin-top: 6em;
+        margin-left: .3em;
+
+    }
+
+    .send-box {
+        display: flex;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 2em;
+        // width: 7em;
+        text-align: center;
+    }
+
+    .message-box {
+        height: 10em;
     }
 }
 

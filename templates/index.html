@@ -25,17 +25,12 @@
     </section>
     
     <section class="contact-section">
-        <div class="container">
-            <div class="contact-center">  
-                <h2>Contact</h2>
-                <form action="{{ url_for('form') }}" method="POST" enctype="text/plain">
-                    {{ form.csrf_token }}
-                    {{ form.name }}
-                    {{ form.email }}
-                    {{ form.message }}
-                    {{ form.submit }}"
-                </form>
-            </div>
+        <div class="container"> 
+                <a href="{{ url_for("contact")}}">
+                    <div class="contact-center">
+                        <h1> Need help?</h1>
+                    </div>
+                </a>
         </div>
 
     </section>

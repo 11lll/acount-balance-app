@@ -61,7 +61,7 @@ body {
   padding: 2em;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 14vh;
+  margin-top: 15vh;
   outline: 1px solid #3f4832;
   -webkit-box-shadow: 0em 1em 1.5em white;
           box-shadow: 0em 1em 1.5em white;
@@ -137,7 +137,7 @@ h3 {
 
 .contact-section {
   padding: 2em;
-  margin-top: 8em;
+  margin-top: 6em;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -151,6 +151,16 @@ h3 {
   max-width: 300px;
   margin: 0 auto;
   width: 100%;
+}
+
+.contact-section h1 {
+  text-align: center;
+  color: white;
+  text-shadow: .4px .3px  #ffffff;
+}
+
+.contact-section h1:hover {
+  color: #d3eeda;
 }
 
 .contact-section h2 {
@@ -187,6 +197,25 @@ h3 {
 
 .contact-section input[type="submit"]:hover {
   background-color: var(--main-hover-color);
+}
+
+.contact-section .go-home-btn {
+  margin-top: 6em;
+  margin-left: .3em;
+}
+
+.contact-section .send-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 2em;
+  text-align: center;
+}
+
+.contact-section .message-box {
+  height: 10em;
 }
 
 .thanks-box {

@@ -3,9 +3,9 @@
 {% block content %}
     <section class="thanks">
         <div class="thanks-box">
-            <a href="https://fundprojector.com/">
+            <a href="{{ url_for("home")}}">
                 <div class="thanks-message">
-                    <span> Thanks for your message!<span>
+                    <span> Thanks {{ name }} for your message!<span>
                 </div>
             </a>
         </div>

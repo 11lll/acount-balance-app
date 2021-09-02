@@ -1,37 +1,22 @@
 from flask import Flask, redirect, url_for, render_template, request
 import smtplib
 from balance_projection import balance_projection
-from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField
-from wtforms import StringField, TextAreaField, SubmitField
-from wtforms.validators import InputRequired, Email
+from forms import ContactForm
 
 application = Flask(__name__)
 application.config['SECRET_KEY'] = "Don'tTellAnyone!"
 
-class ContactForm(FlaskForm):                    #https://stackoverflow.com/questions/25324113/email-validation-from-wtform-using-flask
-  name = StringField("name",  [InputRequired("Please enter your name.")], render_kw={"placeholder": "Name"})
-  email = StringField("email",  [InputRequired("Please enter your email address."), Email("This field requires a valid email address")], render_kw={"placeholder": "Email"})
-  message = TextAreaField("message",  [InputRequired("Not including a message would be stupid")], render_kw={"placeholder": "Your message..."})
-  submit = SubmitField("Send")
 
-
-@application.route("/form", methods=["POST", "GET"])
-def form(): 
-    title = "Thank You!"
-    return render_template("form.html", title=title)
-
-
-
-@application.route("/", methods=["POST", "GET"])
-def home():
+@application.route("/contact", methods=["POST", "GET"])
+def contact():
     form = ContactForm()
 
-    if form.validate_on_submit():
-        req = request.form.get          #https://www.youtube.com/watch?v=lLc_jHkifRc&ab_channel=PrettyPrinted
-        name = req("name")
-        email = req("email")
-        message = req("message")
+    if form.is_submitted():
+        name = form.name.data
+        email = form.email.data
+        message = form.message.data
+
+        # print(f'You have a new message from {name} || {email} \n\n {message}')
 
         msg = f'You have a new message from {name} || {email} \n\n {message}'
 
@@ -40,6 +25,18 @@ def home():
         server.login("fundprojector@gmail.com", "DFtJXuL8ir.60aRPGtlOC")
         server.sendmail("fundprojector@gmail.com", "fundprojector@gmail.com", msg)
         return render_template("form.html", form=form)
+    return render_template("contact.html", form=form)
+
+
+# @application.route("/form", methods=["POST", "GET"])
+# def form(): 
+#     title = "Thank You!"
+#     return render_template("form.html", title=title)
+
+
+
+@application.route("/", methods=["POST", "GET"])
+def home():
     
     #return "HE!"
     if request.method == "POST":
@@ -61,7 +58,7 @@ def home():
         #print(acc_balance, weekly_expenses, monthly_income, monthly_expenses)
         return redirect(url_for("dataframe", acc_balance=ab, weekly_expenses=we, monthly_income=mi, monthly_expenses=me))
             
-    return render_template("index.html", form=form)
+    return render_template("index.html")
 
 
 @application.route("/dataframe", methods=["GET"])
