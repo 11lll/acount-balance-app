@@ -218,6 +218,40 @@ h3 {
   height: 10em;
 }
 
+.table-help-section {
+  padding: 2em;
+  margin-top: 1em;
+  margin-bottom: 2em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.table-help-section .container {
+  min-width: 265px;
+  max-width: 400px;
+  margin: 0 auto;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  place-content: space-between;
+}
+
+.table-help-section h1 {
+  text-align: center;
+  color: white;
+  text-shadow: .4px .3px  #ffffff;
+}
+
+.table-help-section h1:hover {
+  color: #d3eeda;
+}
+
 .thanks-box {
   height: 100vh;
   text-align: center;
@@ -234,8 +268,8 @@ h3 {
 }
 
 .thanks-message {
-  width: 25em;
-  height: 1.6em;
+  width: 33em;
+  height: 2em;
   text-align: center;
   padding: 2em;
   color: wheat;
@@ -264,6 +298,53 @@ h3 {
 
 .thanks-message span {
   font-size: 25px;
+}
+
+.table-container {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3em;
+  text-align: center;
+}
+
+.table-container h2 {
+  font-size: 21pt;
+  color: white;
+  text-align: center;
+}
+
+#tablestyle {
+  font-size: 15pt;
+  font-family: Inconsolata;
+  color: ivory;
+  border-collapse: collapse;
+  border: 1px solid silver;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 2.5em;
+}
+
+#tablestyle th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-right: 1em;
+  padding-left: 1em;
+  text-align: center;
+  color: white;
+}
+
+#tablestyle td, th {
+  padding: 5px;
+  text-align: center;
+}
+
+#tablestyle tr:nth-child(even) {
+  background: rgba(224, 224, 224, 0.1);
+}
+
+#tablestyle tr:hover {
+  background: #526375;
+  cursor: pointer;
 }
 
 #stars1 {

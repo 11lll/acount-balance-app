@@ -16,29 +16,19 @@ def contact():
         email = form.email.data
         message = form.message.data
 
-        # print(f'You have a new message from {name} || {email} \n\n {message}')
-
         msg = f'You have a new message from {name} || {email} \n\n {message}'
 
         server = smtplib.SMTP("smtp.gmail.com", 587)
         server.starttls()
         server.login("fundprojector@gmail.com", "DFtJXuL8ir.60aRPGtlOC")
         server.sendmail("fundprojector@gmail.com", "fundprojector@gmail.com", msg)
-        return render_template("form.html", form=form)
-    return render_template("contact.html", form=form)
-
-
-# @application.route("/form", methods=["POST", "GET"])
-# def form(): 
-#     title = "Thank You!"
-#     return render_template("form.html", title=title)
-
+        return render_template("form.html", form=form, name=name, email=email, message=message)
+    else:
+        return render_template("contact.html", form=form)
 
 
 @application.route("/", methods=["POST", "GET"])
 def home():
-    
-    #return "HE!"
     if request.method == "POST":
 
         req = request.form                                          #https://stackoverflow.com/questions/53134216/multiple-forms-on-1-page-python-flask
@@ -55,7 +45,6 @@ def home():
             mi = '0'
         if me == '':
             me = '0'
-        #print(acc_balance, weekly_expenses, monthly_income, monthly_expenses)
         return redirect(url_for("dataframe", acc_balance=ab, weekly_expenses=we, monthly_income=mi, monthly_expenses=me))
             
     return render_template("index.html")
@@ -67,8 +56,6 @@ def dataframe():
     weekly_expenses = int(request.args["weekly_expenses"])
     monthly_income = int(request.args["monthly_income"])
     monthly_expenses = int(request.args["monthly_expenses"])
-    #print(acc_balance, weekly_expenses, monthly_income, monthly_expenses)
-    #return render_template("index.html")
     return balance_projection(acc_balance, weekly_expenses, monthly_income, monthly_expenses)
 
 

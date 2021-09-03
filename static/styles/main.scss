@@ -239,6 +239,37 @@ h3 {
     }
 }
 
+
+.table-help-section {
+    padding: 2em;
+    margin-top: 1em;
+    margin-bottom: 2em;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+    
+
+    .container{
+        min-width: 265px;
+        max-width: 400px;
+        margin: 0 auto;
+        width: 100%;
+        display: flex;
+        place-content: space-between;
+
+    }
+    
+    h1 {
+        text-align: center;
+        color: white;
+        text-shadow: .4px .3px  #ffffff;
+        &:hover {
+            color:hsl(137, 45%, 88%);
+        }
+    }
+}
+
 .thanks-box {
     height: 100vh;
     text-align:center;
@@ -249,8 +280,8 @@ h3 {
 }
 
 .thanks-message{
-    width: 25em;
-    height: 1.6em;
+    width: 33em;
+    height: 2em;
     text-align: center;
     padding: 2em;
     color: wheat;
@@ -280,7 +311,55 @@ h3 {
 }
 
 
+.table-container {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3em;
+    text-align: center;
 
+        h2 {
+            font-size: 21pt;
+            color: white;
+            text-align: center;
+        }
+    }
+
+
+
+#tablestyle {
+    font-size: 15pt; 
+    font-family: Inconsolata;
+    color: ivory;
+    border-collapse: collapse; 
+    border: 1px solid silver;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 2.5em;
+
+}
+
+#tablestyle th {
+     padding-top: 12px;
+     padding-bottom: 12px;
+     padding-right: 1em;
+     padding-left: 1em;
+     text-align: center;
+     color: white;
+     }
+
+#tablestyle td, th {
+    padding: 5px;
+    text-align: center;
+}
+
+#tablestyle tr:nth-child(even) {
+    background: rgba(224, 224, 224, 0.1);
+}
+
+#tablestyle tr:hover {
+    background: hsl(211, 18%, 39%);
+    cursor: pointer;
+}
 
 
 

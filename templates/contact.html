@@ -8,15 +8,17 @@
         <div class="contact-center">  
             <h2>Contact</h2>
 
-            <form action="" method="POST" enctype="text/plain">
+            <!-- <form action="{{ url_for('contact')}}" method="POST" enctype="text/plain"> -->
+            <form action="{{ url_for('contact')}}" method="POST">
                 {{ form.csrf_token }}
-                {{ form.name }}
+                {{ form.name(placeholder="Name") }}
                 <p></p>
-                {{ form.email }}
+                {{ form.email(placeholder="Email") }}
                 <p></p>
-                {{ form.message(class_="message-box") }}
+                {{ form.message(class_="message-box", placeholder="Your message...") }}
                 <p></p>
                 {{ form.send(class_="send-box") }}"
+                <p></p>
             </form>
 
         </div>

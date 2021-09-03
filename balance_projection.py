@@ -58,7 +58,7 @@ def balance_projection(acc_balance=0, weekly_expenses=0, monthly_income=0, month
     <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Here's your report!</title>
-    <link rel= "stylesheet" type= "text/css" href="static/styles/df_style.css">
+    <link rel= "stylesheet" type= "text/css" href="static/styles/main.css">
     </head>
     <body>
         <section class="wrapper">
@@ -67,19 +67,38 @@ def balance_projection(acc_balance=0, weekly_expenses=0, monthly_income=0, month
             <div id="stars3"></div>
         </section>
         
-        <section class="title">
-            <div class="container">
+        <section class="-table-title">
+            <div class="table-container">
                 <h2 class="subhead">Here's your 1 year report!</h2>
             </div>
         </section>
+
         """
 
-    html_body = df0.head(54).to_html(index=False, table_id="tablestyle") #set table_id to your css style name
     html_end = """
+        
+        <section class="table-help-section">
+            <div class="container"> 
+                    <a href="https://fundprojector.com/contact">
+                        <div class="contact-center">
+                            <h1> Need help?</h1>
+                        </div>
+                    </a>
+
+                    <a href="https://fundprojector.com/">
+                        <div class="go-home-btn">
+                            <h1>Try again!</h1>
+                        </div>
+                    </a>                                            
+            </div>
+        </section>
+
         <div id="footer">
         Created by Lukass Lappuke
         </div>
     </body>"""
+    
+    html_body = df0.head(54).to_html(index=False, table_id="tablestyle") #set table_id to your css style name
     html_table = (html_start  + html_body + html_end)
 
     return html_table
