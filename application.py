@@ -7,7 +7,7 @@ import os
 application = Flask(__name__)
 application.config['SECRET_KEY'] = "Don'tTellAnyone!"
 
-email_psw = os.environ["FLASK_EMAIL_PSW"]
+email_psw = os.environ.get("FLASK_EMAIL_PSW")
 
 
 @application.route("/contact", methods=["POST", "GET"])
