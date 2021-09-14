@@ -5,7 +5,7 @@ from forms import ContactForm
 import os
 
 application = Flask(__name__)
-application.config['SECRET_KEY'] = "Don'tTellAnyone!"
+application.config['SECRET_KEY'] = os.environ.get("SECRET_FLASK_KEY")
 
 email_psw = os.environ.get("FLASK_EMAIL_PSW")
 
