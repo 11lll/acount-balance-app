@@ -2,9 +2,12 @@ from flask import Flask, redirect, url_for, render_template, request
 import smtplib
 from balance_projection import balance_projection
 from forms import ContactForm
+import os
 
 application = Flask(__name__)
 application.config['SECRET_KEY'] = "Don'tTellAnyone!"
+
+email_psw = os.environ.get("FLASK_EMAIL_PSW")
 
 
 @application.route("/contact", methods=["POST", "GET"])
@@ -20,7 +23,7 @@ def contact():
 
         server = smtplib.SMTP("smtp.gmail.com", 587)
         server.starttls()
-        server.login("fundprojector@gmail.com", "DFtJXuL8ir.60aRPGtlOC")
+        server.login("fundprojector@gmail.com", email_psw)
         server.sendmail("fundprojector@gmail.com", "fundprojector@gmail.com", msg)
         return render_template("form.html", form=form, name=name, email=email, message=message)
     else:
